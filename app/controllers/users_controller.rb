@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def sign_up
+    render ({ :template => "users/sign_up.html.erb" })
+  end
   def index
     @users = User.all.order({ :username => :asc })
 
@@ -17,9 +20,14 @@ class UsersController < ApplicationController
 
     user.username = params.fetch("input_username")
 
-    user.save
+    save_status = user.save
 
+    if save_status == true
     redirect_to("/users/#{user.username}")
+    else
+      redirect_to("/user_sign_up")
+    end
+    
   end
 
   def update

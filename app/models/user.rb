@@ -20,6 +20,8 @@ class User < ApplicationRecord
     }
   )
 
+  has_secure_password
+
   def comments
     return Comment.where({ :author_id => self.id })
   end
