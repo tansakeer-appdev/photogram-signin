@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def verify_cred
     un= params.fetch("input_username") # get the username from params using fetch
     pw= params.fetch("input_password")# get the username from params using fetch
