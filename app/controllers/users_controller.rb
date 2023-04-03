@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   def sign_up
     render ({ :template => "users/sign_up.html.erb" })
   end
+
   def index
     @users = User.all.order({ :username => :asc })
 
-    render({ :template => "users/index.html" })
+    render({ :template => "users/index.html.erb" })
   end
 
   def show
