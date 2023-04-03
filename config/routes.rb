@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get("/", { :controller => "users", :action => "index" })
 
   # User routes
-    get("/user_sign_up", {:controller => "users", :action => "sign_up"})
+    get("/user_sign_up", { :controller => "users", :action => "sign_up"})
+    get("/user_sign_out", { :controller => "users", :action => "sign_out"})
+    get("/user_sign_in", { :controller => "users", :action => "sign_in"})
+    post("/verify_cred", { :controller => "users", :action => "verify_cred"})
   # CREATE
   get("/insert_user_record", {:controller => "users", :action => "create" })
 
